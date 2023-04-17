@@ -1,0 +1,44 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# clustersims
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `clustersims` is to compare rejection rates of different
+methods for cluster robust inference. The data generating process
+follows MacKinnon, Nielsen & Webb’s “Fast and Reliable” paper (2023).
+
+## Installation
+
+You can install the development version of clustersims from github by
+typing
+
+``` r
+library(devtools)
+install_github("s3alfisc/clustersims")
+```
+
+## Example
+
+``` r
+set.seed(8795)
+
+# note that this will run for a very long time
+pracma::tic()
+
+library(clustersims)
+run_clustersim(
+  n_sims = 100000, 
+  workers = 8,
+  filename = "cluster_simulation2"
+)
+pracma::toc()
+```
+
+## Other Simulations
+
+-   Romano Wolf corrections:
+    [wildrwolf](https://github.com/s3alfisc/wildrwolf#but-does-it-work-monte-carlo-experiments)
+-   [other dgp’s](https://github.com/s3alfisc/clusteredErrorsSims)
